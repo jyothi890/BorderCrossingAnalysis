@@ -1,0 +1,25 @@
+Port Name,State,Port Code,Border,Date,Measure,Value
+Hannah,North Dakota,3408,US-Canada Border,01/01/1996 12:00:00 AM,Trains,0
+Boundary,Washington,3015,US-Canada Border,01/01/1996 12:00:00 AM,Pedestrians,0
+Presidio,Texas,2403,US-Mexico Border,01/01/1996 12:00:00 AM,Pedestrians,645
+Fortuna,North Dakota,3417,US-Canada Border,01/01/1996 12:00:00 AM,Bus Passengers,568
+Grand Portage,Minnesota,3613,US-Canada Border,01/01/1996 12:00:00 AM,Truck Containers Full,976
+St. John,North Dakota,3405,US-Canada Border,01/01/1996 12:00:00 AM,Personal Vehicle Passengers,3278
+Portland,Maine,101,US-Canada Border,01/01/1996 12:00:00 AM,Trucks,0
+Fort Kent,Maine,110,US-Canada Border,01/01/1996 12:00:00 AM,Trains,0
+Van Buren,Maine,108,US-Canada Border,01/01/1996 12:00:00 AM,Rail Containers Empty,0
+Ogdensburg,New York,701,US-Canada Border,01/01/1996 12:00:00 AM,Pedestrians,0
+Ambrose,North Dakota,3410,US-Canada Border,01/01/1996 12:00:00 AM,Trains,0
+Van Buren,Maine,108,US-Canada Border,01/01/1996 12:00:00 AM,Personal Vehicles,30862
+Whitetail,Montana,3312,US-Canada Border,01/01/1996 12:00:00 AM,Truck Containers Empty,0
+Point Roberts,Washington,3017,US-Canada Border,01/01/1996 12:00:00 AM,Rail Containers Empty,0
+Antler,North Dakota,3413,US-Canada Border,01/01/1996 12:00:00 AM,Personal Vehicle Passengers,1576
+Tecate,California,2505,US-Mexico Border,01/01/1996 12:00:00 AM,Trucks,3228
+Calais,Maine,115,US-Canada Border,01/01/1996 12:00:00 AM,Trucks,8955
+Carbury,North Dakota,3421,US-Canada Border,01/01/1996 12:00:00 AM,Truck Containers Empty,0
+Skagway,Alaska,3103,US-Canada Border,01/01/1996 12:00:00 AM,Buses,3
+Detroit,Michigan,3801,US-Canada Border,06/01/2019 12:00:00 AM,Train Passengers,486
+Detroit,Michigan,3801,US-Canada Border,06/01/2019 12:00:00 AM,Trains,155
+Fort Kent,Maine,0110,US-Canada Border,06/01/2019 12:00:00 AM,Pedestrians,101
+Roma,Texas,2310,US-Mexico Border,06/01/2019 12:00:00 AM,Pedestrians,22414
+Santa Teresa,New Mexico,2408,US-Mexico Border,06/01/2019 12:00:00 AM,Pedestrians,16846
