@@ -75,7 +75,6 @@ def main():
         print (usage)
         print ('Provide an output filename')
         sys.exit(1)
-    print("/".join(args[1].split('/')[:-1]))
     if not os.path.isdir("/".join(args[1].split('/')[:-1])):
         print (usage)
         print ('Provide a valid output filepath')
