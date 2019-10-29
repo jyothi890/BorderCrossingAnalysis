@@ -11,7 +11,7 @@
 
 The Bureau of Transportation Statistics regularly makes available data on the number of vehicles, equipment, passengers and pedestrians crossing into the United States by land.
 
-For this challenge, we want to you to calculate the total number of times vehicles, equipment, passengers and pedestrians cross the U.S.-Canadian and U.S.-Mexican borders each month. We also want to know the running monthly average of total number of crossings for that type of crossing and border.
+For this challenge, we want to you to calculate the total number of times vehicles, equipment, passengers and pedestrians cross the U.S.-Canadian and U.S.-Mexican borders each month. We also want to know the running monthly average of the total number of crossings for that type of crossing and border.
 
 # Input
 
@@ -48,16 +48,33 @@ The lines should be sorted in descending order by
 
 # Approach
 
-My approach to this problem is understand date in the input file, read the file row by row to sum and save the values in dictionary, sort dictionary and write date to output file.
+My approach to this problem is understanding the date in the input file, read the file row by row to sum and save the values in the dictionary, sort dictionary, calculate running monthly average and write date to output file.
 
 Version #1
 
-Spontaneously I felt that data could be easily handled when captured in dictionary. At first, as part of rapid prototyping, I read through the contents of file and saved the data in the dictionary. I used nested dictionary as it perfectly suited the problem. A saperate utility function is defined to parse the  date in each row to retrieve year and month. To obtain total number of crossings by month  the dicitonary is designed such that the othermost key is border, followed by measure,year and month as inner keys and sum of number of crossings as dictionary value.
+Spontaneously I felt that data could be easily handled when captured in dictionary. At first, as part of rapid prototyping, I read through the contents of file and saved the data in the dictionary. I used nested dictionary as it perfectly suited the problem. A separate utility function is defined to parse the  date in each row to retrieve year and month. To obtain the total number of crossings by month  the dictionary is designed such that the othermost key is border, followed by measure,year and month as inner keys and sum of number of crossings as dictionary value.
 
-But I realizied that I could not calculate runnning monthly average with this design of nested dicitonary since data cannot be ordered by year and month across borders and measures. So I re-designed the nested dictionary.
+But I realized that I could not calculate running monthly average with this design of nested dictionary since data cannot be ordered by year and month across borders and measures. So I re-designed the nested dictionary.
 
 Version #2
 
-The latest nested dictionary consists of year as outermost key followed by month,measure and border as inner keys. For calculating running monthly average this dictionary is sorted by year and month. For each combination of border and measure (sorted by year and month) a supporting dicitonary is used in parallel to hold cumulative sum of no of crossings upto that month. This supporting dicitonary holds cumulative sum and no of months visited so far. For each value of sum of no_of_crossings in nested dicitonary , a row is added to list for combination of year, month, measure, border, value(sum of no_of_crossings for that month) and running month average(calculated by using cumulative sum).
+The latest nested dictionary consists of year as outermost key followed by month,measure and border as inner keys. For calculating running monthly average this dictionary is sorted by year and month. For each combination of border and measure (sorted by year and month) a supporting dictionary is used in parallel to hold cumulative sum of no of crossings upto that month. This supporting dictionary holds cumulative sum and no of months visited so far. For each value of sum of no_of_crossings in nested dictionary , a row is added to the list for combination of year, month, measure, border, value(sum of no_of_crossings for that month) and running month average(calculated by using cumulative sum).
 
 I found that no of crossings for few measures in a month are 0. These months are not considered in our calculation.
+
+# Run Instructions
+
+I used python3 to solve this exercise and used python standard libraries.
+- sys: To accept inputs from command line,
+- os: To validate input parameters
+- csv: To open and write data into csv files
+- collections: To store intermediate data
+- datetime: To extract year and month
+
+The run.sh script in project root directory will run the python scripts and generate output in required format in specified location.
+
+# Tests
+
+Various test input files are located in input folder of individual test and corresponding output file named as report.csv are in output folder.
+
+
