@@ -72,7 +72,8 @@ def calculate_running_monthly_average(in_file):
     cumulative_total = collections.defaultdict(lambda : \
             collections.defaultdict(tuple))
 
-    # Collect data from and process each row
+    # Collect data from and process each row. The nested dicitonary is sorted by year and month to calculate
+    # running monthly average
 
     for (year, months) in \
         sorted(total_crossings_monthly_by_measure(in_file).items()):
