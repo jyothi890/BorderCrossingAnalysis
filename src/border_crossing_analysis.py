@@ -9,7 +9,9 @@ import csv
 def report(in_file, out_file):
     """
     This function takes full data from the specified input file
-    and writes the condensed data to a specified output file. 
+    and writes the condensed data to a specified output file. This is
+    a wrapper method that calls utility and metric functions to clean and
+    aggregate the data.
     """
 
     try:
@@ -24,6 +26,8 @@ def report(in_file, out_file):
             trip_writer.writeheader()
 
         # collect data from and process each row
+        # A list of running monthly average of total crossings for the combination
+        # of border and measure is returned.
 
             for row in \
                 sorted(analysis_metrics.calculate_running_monthly_average(in_file),
