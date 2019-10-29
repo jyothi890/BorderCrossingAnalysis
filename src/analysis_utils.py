@@ -1,5 +1,5 @@
 from datetime import datetime  
-from collections import defaultdict
+
 
 
 def time_of_bordercrossing(datum):
