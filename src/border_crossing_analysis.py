@@ -1,5 +1,4 @@
 import sys
-import re
 import os
 import analysis_metrics
 import datetime
@@ -44,11 +43,12 @@ def report(in_file, out_file):
                 new_point['Value'] = row[4]
                 new_point['Average'] = row[5]
                 trip_writer.writerow(new_point)
-    except IOError:
+    except IOError as e:
+        print(e)
         sys.stderr.write('Unable to open the log file' + '\n')
     except Exception as e:
-        print (e)
-        raise Exception('Unhandled' + '\n')
+        print(e)
+        raise Exception('Unhandled'+'\n')
 
 
 def main():
