@@ -27,7 +27,8 @@ def report(in_file, out_file):
 
         # collect data from and process each row
         # A list of running monthly average of total crossings for the combination
-        # of border and measure is returned.
+        # of border and measure is returned.This list is sorted in descending order of
+        # year,month,value,measure and border.
 
             for row in \
                 sorted(analysis_metrics.calculate_running_monthly_average(in_file),
