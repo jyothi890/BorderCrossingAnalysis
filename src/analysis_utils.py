@@ -1,4 +1,4 @@
-from datetime import datetime  # operations to parse dates
+from datetime import datetime  
 from collections import defaultdict
 
 
@@ -9,9 +9,12 @@ def time_of_bordercrossing(datum):
     
     """
 
-    border_crossing_date = datetime.strptime(datum['Date'],
+    try:
+         border_crossing_date = datetime.strptime(datum['Date'],
             '%m/%d/%Y %H:%M:%S %p')
 
-    month = int(border_crossing_date.strftime('%-m'))
-    year = int(border_crossing_date.strftime('%Y'))
-    return (year, month)
+         month = int(border_crossing_date.strftime('%-m'))
+         year = int(border_crossing_date.strftime('%Y'))
+         return (year, month)
+    except ValueError as ve:  
+         print(ve) 
