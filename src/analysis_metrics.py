@@ -1,4 +1,4 @@
-import csv  # read and write csv files
+import csv  
 import collections
 from math import ceil
 import analysis_utils
@@ -34,6 +34,7 @@ def total_crossings_monthly_by_measure(in_file):
 
                 border = row['Border']
                 measure = row['Measure']
+                # call date utility fuction to extract year and month
                 (year, month) = \
                     analysis_utils.time_of_bordercrossing(row)
                 crossings = int(row['Value'])
@@ -55,6 +56,7 @@ def calculate_running_monthly_average(in_file):
     """
     This function takes full data from the specified input file
     and returns a list of running monthly average for the combinations of year,month,measure and border.
+    The list has data as : [year,month,measure,border,sum_of_crossings(for that month),running monthly average]
     """
 
     # List to hold Running Monthly Average of total crossings
@@ -77,7 +79,9 @@ def calculate_running_monthly_average(in_file):
         for (month, measures) in sorted(months.items()):
             for (measure, borders) in measures.items():
                 for (border, value) in borders.items():
-
+                    
+                    # for new combination border and measure cumulative total is no of crossings from 
+                    # the first month and running monthly average is 0.
                     if not cumulative_total[border][measure]:
                         cumulative_total[border][measure] = \
                             sumupto(sum_so_far=value, months=1)
@@ -90,6 +94,8 @@ def calculate_running_monthly_average(in_file):
                             0,
                             ))
                     else:
+                        # for existing combination border running monthly average is calculated
+                        # based on cumulative total recorded till current month.
                         average = \
                             int(ceil(cumulative_total[border][measure][0]
                                 / cumulative_total[border][measure][1]))
@@ -101,6 +107,8 @@ def calculate_running_monthly_average(in_file):
                             value,
                             average,
                             ))
+                        # The current month no of crossing is added to cumulative total for
+                        # futur calculations of running monthly average for that border and measure
                         cumulative_total[border][measure] = \
                             sumupto(sum_so_far=cumulative_total[border][measure][0]
                                     + value,
