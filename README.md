@@ -28,9 +28,17 @@ For the purposes of this challenge, you'll want to pay attention to the followin
 
 Using the input file, you must write a program to
 
-Sum the total number of crossings (Value) of each type of vehicle or equipment, or passengers or pedestrians, that crossed the border that month, regardless of what port was used.
-Calculate the running monthly average of total crossings, rounded to the nearest whole number, for that combination of Border and Measure, or means of crossing.
+- Sum the total number of crossings (Value) of each type of vehicle or equipment, or passengers or pedestrians, that crossed the border that month, regardless of what port was used.
+- Calculate the running monthly average of total crossings, rounded to the nearest whole number, for that combination of Border and Measure, or means of crossing.
+
 Your program must write the requested output data to a file named report.csv in the top-most output directory of your repository.
+Each line of the report.csv file contains these fields in this order:
+- Border
+- Date
+- Measure
+- Value
+- Average
+
 The lines should be sorted in descending order by
 
 - Date
