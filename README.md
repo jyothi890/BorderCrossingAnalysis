@@ -33,11 +33,11 @@ Using the input file, you must write a program to
 
 Your program must write the requested output data to a file named report.csv in the top-most output directory of your repository.
 Each line of the report.csv file contains these fields in this order:
-- Border
-- Date
-- Measure
-- Value
-- Average
+- Border: Designates what border was crossed
+- Date: Timestamp indicating month and year of crossing
+- Measure: Indicates means, or type, of crossing being measured (e.g., vehicle, equipment, passenger or pedestrian)
+- Value: Sum of  number of crossings of each type of vehicle or equipment, or passengers or pedestrians, that crossed the border that month
+- Average: Running monthly average of total crossings for that combination of Border and Measure, or means of crossing.
 
 The lines should be sorted in descending order by
 
