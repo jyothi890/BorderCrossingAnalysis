@@ -6,7 +6,7 @@ The code is divided into 3 files for better readability
 
 - border_crossing_analysis.py
 
-This is the starting script for the analysis. The input paramaters are validated before the call to analysis procedure is done. Once the input parameters are validated, a call to report function is made. In the report function, makes a call to analysis_metrics.py script were  total no of crossings and running monthly average metrics are calculate.
+This is the starting script for the analysis. The input paramaters are validated before the call to analysis procedure is done. Once the input parameters are validated, a call to report function is made. The report function, makes a call to analysis_metrics.py script were  total no of crossings and running monthly average metrics are calculate.
 
 - analysis_metrics.py
 
