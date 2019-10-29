@@ -45,3 +45,19 @@ The lines should be sorted in descending order by
 - Value (or number of crossings)
 - Measure
 - Border
+
+# Approach
+
+My approach to this problem is understand date in the input file, read the file row by row to sum and save the values in dictionary, sort dictionary and write date to output file.
+
+Version #1
+
+Spontaneously I felt that data could be easily handled when captured in dictionary. At first, as part of rapid prototyping, I read through the contents of file and saved the data in the dictionary. I used nested dictionary as it perfectly suited the problem. A saperate utility function is defined to parse the  date in each row to retrieve year and month. To obtain total number of crossings by month  the dicitonary is designed such that the othermost key is border, followed by measure,year and month as inner keys and sum of number of crossings as dictionary value.
+
+But I realizied that I could not calculate runnning monthly average with this design of nested dicitonary since data cannot be ordered by year and month across borders and measures. So I re-designed the nested dictionary.
+
+Version #2
+
+The latest nested dictionary consists of year as outermost key followed by month,measure and border as inner keys. For calculating running monthly average this dictionary is sorted by year and month. For each combination of border and measure (sorted by year and month) a supporting dicitonary is used in parallel to hold cumulative sum of no of crossings upto that month. This supporting dicitonary holds cumulative sum and no of months visited so far. For each value of sum of no_of_crossings in nested dicitonary , a row is added to list for combination of year, month, measure, border, value(sum of no_of_crossings for that month) and running month average(calculated by using cumulative sum).
+
+I found that no of crossings for few measures in a month are 0. These months are not considered in our calculation.
