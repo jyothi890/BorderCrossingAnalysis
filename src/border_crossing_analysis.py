@@ -58,9 +58,9 @@ def report(in_file, out_file):
 
 def main():
     """
-      This code logic parses command-line for correct inputs and subsequently calls functions to process
-      data and generate report.
-      """
+    This code logic parses command-line for correct inputs and subsequently calls functions to process
+    data and generate report.
+    """
 
     args = sys.argv[1:]
     usage = 'usage: <input_file> <output_file> '
@@ -68,7 +68,7 @@ def main():
         print (usage)
         sys.exit(1)
 
-      # Check parameter
+    # Check parameter
 
     if not os.path.isfile(args[0]):
         print (usage)
